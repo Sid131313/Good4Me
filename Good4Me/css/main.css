@@ -1,0 +1,548 @@
+@charset "UTF-8";
+/**
+ * Сброс стилей
+ **/
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+input {
+  outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+/*Basic style*/
+body {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background: #fff;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.wrap {
+  min-width: 320px;
+  max-width: 1679px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+p,
+a,
+button {
+  color: #454545;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 89%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__menu-list {
+  display: flex;
+  gap: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #454545;
+}
+.header__menu-item a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.header__menu-item a:hover {
+  text-decoration: underline;
+}
+.header__icons {
+  display: flex;
+  gap: 15px;
+  max-width: 22px;
+}
+
+.apple {
+  background-image: url("../assets/img/1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  min-width: 100%;
+  margin: 30px 0;
+  position: relative;
+}
+.apple_bg img {
+  position: absolute;
+  bottom: -20px;
+}
+.apple_info {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  padding: 2rem;
+  text-align: left;
+}
+.apple h1 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 162%;
+  color: #F6623E;
+}
+.apple h3 {
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 129%;
+}
+.apple p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 181%;
+  padding-bottom: 38px;
+}
+.apple button {
+  border: 2px solid transparent;
+  background-color: #F6623E;
+  border-radius: 0;
+  color: #FFF;
+  font-size: 16px;
+  padding: 12px 25px;
+  cursor: pointer;
+}
+.apple button:hover {
+  transition: 0.3s;
+  border: 2px solid #F6623E;
+  background-color: transparent;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 12px 25px;
+  cursor: pointer;
+}
+
+.deal__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.deal__title h2 {
+  margin-top: 64px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.deal__title p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+  color: #454545;
+  padding-bottom: 36px;
+}
+.deal__title span {
+  display: block;
+  width: 127px;
+  height: 4px;
+  background-color: #F6623E;
+  margin-bottom: 25px;
+}
+.deal__cart {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.deal__cart-itom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.deal__cart-itom p {
+  margin-top: 22px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+}
+
+.plus {
+  margin: 138px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 170px;
+  max-width: 1200px;
+}
+.plus__info {
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.plus__info h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 133%;
+  padding: 20px 0;
+}
+.plus__info p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+}
+
+.control {
+  background-color: #FFF8F6;
+}
+.control .wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.control__info {
+  max-width: 515px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.control__info h3 {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  padding-bottom: 15px;
+}
+.control__info p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+}
+.control__info button {
+  margin-top: 34px;
+  border: 2px solid #F6623E;
+  background-color: transparent;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 18px 45px;
+  cursor: pointer;
+}
+.control__info button:hover {
+  transition: 0.3s;
+  border: 2px solid #F6623E;
+  background-color: #F6623E;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 18px 45px;
+  cursor: pointer;
+}
+.control__img {
+  display: flex;
+  gap: 30px;
+}
+.control__img-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.products {
+  text-align: center;
+}
+.products h2 {
+  margin: 136px 0 58px;
+  text-align: center;
+}
+.products__cart {
+  display: flex;
+  gap: 30px;
+}
+.products__vitamin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products__vitamin-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.14em;
+  margin: 23px 0 7px;
+}
+.products__vitamin-price {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+}
+.products__vitamin-price h4 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #F6623E;
+}
+.products__vitamin-pricecross {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  text-decoration: line-through;
+  color: #828181;
+  margin: 0;
+}
+.products button {
+  border: 2px solid #F6623E;
+  background-color: transparent;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 18px 45px;
+  cursor: pointer;
+  margin: 60px 0 85px;
+}
+.products button:hover {
+  transition: 0.3s;
+  border: 2px solid #F6623E;
+  background-color: #F6623E;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 18px 45px;
+  cursor: pointer;
+}
+
+.reviews__before {
+  position: absolute;
+}
+
+.reviews {
+  background-color: #FFF8F6;
+}
+.reviews .reviews__cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+.reviews .reviews__img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.reviews .reviews__info {
+  max-width: 620px;
+  margin: 200px 0;
+}
+.reviews .reviews__info h3 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 125%;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 46px;
+}
+.reviews .reviews__info h4 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 83%;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #F6623E;
+  margin-bottom: 24px;
+}
+.reviews .reviews__info p {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 169%;
+  letter-spacing: 0.04em;
+  color: #454545;
+  margin: 24px 0;
+}
+.reviews .reviews__info h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0.06em;
+  color: #f6623e;
+  margin-bottom: 30px;
+}
+
+.reviews__info-navigation {
+  display: flex;
+  gap: 20px;
+}
+.reviews__info-navigation .arrow {
+  display: inline-flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 3px solid gray;
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.reviews__info-navigation .arrow span {
+  font-size: 34px;
+}
+.reviews__info-navigation .arrow-left {
+  border-color: #828181;
+  color: #828181;
+}
+.reviews__info-navigation .arrow-left:hover {
+  border-color: #F6623E;
+  color: #F6623E;
+}
+.reviews__info-navigation .arrow-right {
+  border-color: #828181;
+  color: #828181;
+}
+.reviews__info-navigation .arrow-right:hover {
+  border-color: #F6623E;
+  color: #F6623E;
+}
+
+.shop {
+  text-align: center;
+}
+.shop h2 {
+  margin: 136px 0 58px;
+  text-align: center;
+}
+.shop__cart {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.shop__products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shop__products-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.shop__products-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.14em;
+  margin: 23px 0 7px;
+}
+.shop__products-price {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+}
+.shop__products-price h4 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #F6623E;
+}
+.shop__products-pricecross {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  text-decoration: line-through;
+  color: #828181;
+  margin: 0;
+}
+.shop button {
+  border: 2px solid #F6623E;
+  background-color: transparent;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 18px 45px;
+  cursor: pointer;
+  margin: 60px 0 85px;
+}
+.shop button:hover {
+  transition: 0.3s;
+  border: 2px solid #F6623E;
+  background-color: #F6623E;
+  border-radius: 0;
+  color: #000000;
+  font-size: 16px;
+  padding: 18px 45px;
+  cursor: pointer;
+}
+
+.shop__products-all {
+  margin-top: 50px;
+  display: none;
+  gap: 30px;
+  justify-content: center;
+}
+
+.shop__products-all.is-visible {
+  display: flex;
+}/*# sourceMappingURL=main.css.map */
