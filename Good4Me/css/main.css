@@ -601,13 +601,36 @@ h2 {
   margin: 136px 0 58px;
   text-align: center;
 }
+
 .me-img {
-  display: flex;
-  gap: 30px;
+  display: flex; /* выстраивает изображения в строку */
+  gap: 30px; /* расстояние между изображениями */
+  overflow-x: auto; /* разрешает горизонтальную прокрутку */
+  scroll-behavior: auto; /* плавная прокрутка */
+  -webkit-overflow-scrolling: touch; /* улучшает прокрутку на iOS */
+  padding-bottom: 10px; /* небольшой отступ снизу */
+  cursor: grab; /* меняет курсор на "руку", когда наводим */
 }
+
+.me-img:active {
+  cursor: grabbing; /* курсор при зажатой мыши */
+}
+
+.me-img::-webkit-scrollbar {
+  display: none; /* скрывает горизонтальную полосу прокрутки в браузерах на движке WebKit (Chrome, Safari) */
+}
+
 .me-img img {
-  max-width: 318px;
-  max-height: 318px;
+  max-width: 318px; /* ограничение ширины изображений */
+  max-height: 318px; /* ограничение высоты изображений */
+  flex-shrink: 0; /* запрещает уменьшение изображения при нехватке места */
+  -o-object-fit: cover;
+     object-fit: cover; /* обрезает/масштабирует картинку, сохраняя пропорции */
+  border-radius: 0px; /* закругленные углы (по желанию) */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none; /* запрещает выделение при прокрутке мышкой */
+  pointer-events: none; /* отключает события мыши для изображений — улучшает drag */
 }
 
 .footer {

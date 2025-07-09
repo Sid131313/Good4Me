@@ -48,3 +48,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+const container = document.querySelector('.me-img'); // получаем элемент с изображениями
+
+  // — Прокрутка колесом мыши (горизонтально)
+  container.addEventListener('wheel', (e) => {
+    if (e.deltaY !== 0) {         // если пользователь скроллит вертикально
+      e.preventDefault();         // предотвращаем стандартную вертикальную прокрутку
+      container.scrollLeft += e.deltaY; // прокручиваем контейнер по горизонтали
+    }
+  });
+
+  // — Переменные для drag-scroll
+  let isDown = false;      // нажата ли кнопка мыши
+  let startX;              // начальная позиция X при нажатии
+  let scrollLeft;          // позиция прокрутки на момент начала drag
+
+  // — Нажатие кнопки мыши
+  container.addEventListener('mousedown', (e) => {
+    isDown = true;                        // начинаем drag
+    container.classList.add('active');   // можно добавить стили (например, cursor: grabbing)
+    startX = e.pageX - container.offsetLeft; // получаем координату X относительно контейнера
+    scrollLeft = container.scrollLeft;   // сохраняем текущую прокрутку
+  });
+
+  // — Отпускание кнопки мыши
+  container.addEventListener('mouseup', () => {
+    isDown = false;                      // заканчиваем drag
+    container.classList.remove('active');
+  });
+
+  // — Уход курсора с области
+  container.addEventListener('mouseleave', () => {
+    isDown = false;                      // отменяем drag, если курсор ушел
+    container.classList.remove('active');
+  });
+
+  // — Движение мыши
+  container.addEventListener('mousemove', (e) => {
+    if (!isDown) return; // если кнопка мыши не нажата — ничего не делаем
+    e.preventDefault();  // отключаем выделение и другие действия
+    const x = e.pageX - container.offsetLeft; // текущая координата X
+    const walk = (x - startX) * 1.5; // величина смещения, 1.5 — скорость прокрутки
+    container.scrollLeft = scrollLeft - walk; // прокручиваем контейнер
+  });
