@@ -1,37 +1,43 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const track = document.querySelector('.reviews__slider-track');  // Трек слайдов, который будет двигаться
-  const slides = document.querySelectorAll('.reviews__cart');  // Все слайды
-  const leftArrow = document.querySelector('.arrow-left');  // Стрелка влево
-  const rightArrow = document.querySelector('.arrow-right');  // Стрелка вправо
+document.addEventListener("DOMContentLoaded", function () {
+    // Находим элементы: лента слайдов, отдельные слайды и кнопки стрелок
+    const track = document.querySelector('.reviews__slider-track');
+    const slides = document.querySelectorAll('.reviews__cart');
+    const btnLeft = document.querySelector('.arrow-left');
+    const btnRight = document.querySelector('.arrow-right');
 
-  let currentIndex = 0;  // Индекс текущего слайда
+    const slideCount = slides.length; // Общее количество слайдов
+    let currentIndex = 0;             // Индекс текущего активного слайда
 
-  function updateSliderPosition() {
-    const slideWidth = slides[0].offsetWidth;  // Ширина одного слайда (берём первый)
-    track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;  // Смещаем трек по X
-    track.style.transition = 'transform 0.5s ease';  // Добавляем плавность
-  }
-
-  rightArrow.addEventListener('click', () => {
-    if (currentIndex < slides.length - 1) {  // Если не последний слайд
-      currentIndex++;  // Переход на следующий
-    } else {
-      currentIndex = 0;  // Вернуться к первому (для бесконечного эффекта)
+    // Функция обновления положения ленты слайдов
+    function updateSlider() {
+      const offset = -currentIndex * 100;                   // Вычисляем сдвиг: -100%, -200% и т.д.
+      track.style.transform = `translateX(${offset}%)`;     // Сдвигаем ленту слайдов влево
     }
-    updateSliderPosition();  // Обновить позицию
-  });
 
-  leftArrow.addEventListener('click', () => {
-    if (currentIndex > 0) {  // Если не первый слайд
-      currentIndex--;  // Переход к предыдущему
-    } else {
-      currentIndex = slides.length - 1;  // Переход к последнему (для бесконечного эффекта)
-    }
-    updateSliderPosition();  // Обновить позицию
-  });
+    // Обработчик кнопки "влево"
+    btnLeft.addEventListener('click', () => {
+      currentIndex--;                        // Уменьшаем индекс
+      if (currentIndex < 0) {                // Если дошли до начала — переходим к последнему слайду
+        currentIndex = slideCount - 1;
+      }
+      updateSlider();                        // Обновляем позицию ленты
+    });
 
-  window.addEventListener('resize', updateSliderPosition);  // Обновлять при ресайзе, чтобы ширина пересчиталась
-});
+    // Обработчик кнопки "вправо"
+    btnRight.addEventListener('click', () => {
+      currentIndex++;                        // Увеличиваем индекс
+      if (currentIndex >= slideCount) {      // Если вышли за последний — переходим к первому
+        currentIndex = 0;
+      }
+      updateSlider();                        // Обновляем позицию ленты
+    });
+
+    // Автоматическая прокрутка (опционально)
+    /* setInterval(() => {
+      currentIndex = (currentIndex + 1) % slideCount;  // Бесконечно по кругу
+      updateSlider();
+    }, 5000); */ // каждые 5 секунд
+  });
 
 
   document.addEventListener("DOMContentLoaded", function() {  // Ждём полной загрузки DOM, чтобы элементы уже существовали на странице
@@ -91,3 +97,4 @@ const container = document.querySelector('.me-img'); // получаем эле�
     const walk = (x - startX) * 1.5; // величина смещения, 1.5 — скорость прокрутки
     container.scrollLeft = scrollLeft - walk; // прокручиваем контейнер
   });
+  

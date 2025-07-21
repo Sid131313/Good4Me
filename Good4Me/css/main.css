@@ -106,6 +106,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 .header__menu-list {
   display: flex;
@@ -114,6 +115,9 @@ h2 {
   font-size: 18px;
   line-height: 133%;
   color: #454545;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .header__menu-item a {
   text-decoration: none;
@@ -125,7 +129,29 @@ h2 {
 .header__icons {
   display: flex;
   gap: 15px;
+}
+.header__icons img {
   max-width: 22px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
 }
 
 .apple {
@@ -134,7 +160,7 @@ h2 {
   background-size: cover;
   height: 600px;
   min-width: 100%;
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   position: relative;
 }
 .apple_bg img {
@@ -380,6 +406,9 @@ h2 {
 
 .reviews {
   background-color: #FFF8F6;
+}
+.reviews__slider-track {
+  display: flex;
 }
 .reviews .reviews__cart {
   display: flex;
@@ -761,4 +790,48 @@ h2 {
 .footer__info-pay {
   display: flex;
   justify-content: end;
+}
+.footer__info-pay img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 1200px) {
+  .apple h3 {
+    font-size: 50px;
+  }
+  .apple_bg img {
+    width: 100%;
+  }
+}
+@media (max-width: 780px) {
+  .apple_info {
+    left: 0;
+  }
+  .apple h1 {
+    font-size: 18px;
+  }
+  .apple_bg img {
+    bottom: 0;
+  }
+  .deal__title h2 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+  .deal__cart {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .apple h3 {
+    font-size: 30px;
+  }
+  .apple_info {
+    width: 100%;
+  }
+  .deal__cart {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
 }
