@@ -13,6 +13,7 @@ body {
 
 .wrap {
   @include min-max(320px, 1679px);
+  padding: 0 30px;
 }
 
 p,
